@@ -1,0 +1,10 @@
+.bg-light {
+  background-color: #218f76 !important;
+}
+.navbar-light .navbar-brand {
+  color: #fff;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
