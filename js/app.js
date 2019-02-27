@@ -1,13 +1,13 @@
 var assetCount = 0;
 $(document).ready(() => {
   renderPageContent();
+  console.clear();
 });
 function renderPageContent() {
   AssetTrackerContract.methods.getAssetCount().call((error, response) => {
     if (error) console.log(error);
     else {
       assetCount = response[0];
-      console.log(assetCount);
       $("#count").html("Total " + response[0] + " Assets in the Blockchain");
       renderTable();
     }
@@ -47,22 +47,31 @@ function renderPageContent() {
 }
 
 function createNewAsset() {
+  // // generate data
+  // // $('input[name="batchNo"]').val(faker.random.number());
+  // document.querySelector('input[name="batchNo"]').value = faker.random.number();
+  // $('input[name="name"]').val(faker.commerce.product());
+  // $('input[name="desc"]').val(faker.lorem.sentence());
+  // $('input[name="manufacturer"]').val(faker.company.companyName());
+  // $('input[name="owner"]').val(faker.company.companyName());
+
   let batchNo = $('input[name="batchNo"]').val();
   let name = $('input[name="name"]').val();
   let desc = $('input[name="desc"]').val();
   let manufacturer = $('input[name="manufacturer"]').val();
   let owner = $('input[name="owner"]').val();
   let status = $('input[name="status"]').val();
-  console.log("modal submit");
 
   // send these values to the smart contract
   AssetTrackerContract.methods
     .createAsset(batchNo, name, desc, manufacturer, owner, status)
     .send()
     .then(result => {
+      console.log(result);
       if (result.status === true) {
         alert("Success");
-        // renderPageContent();
+        $("tbody").html("");
+        renderPageContent();
       }
     });
   $("#exampleModal").modal("hide");
