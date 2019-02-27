@@ -135,6 +135,18 @@ const AssetTrackerABI = [
       {
         name: "",
         type: "string"
+      },
+      {
+        name: "",
+        type: "string"
+      },
+      {
+        name: "",
+        type: "string"
+      },
+      {
+        name: "",
+        type: "string"
       }
     ],
     payable: false,
@@ -165,7 +177,7 @@ if (typeof web3 !== "undefined") {
 
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
-const contractAddress = "0xd465936e2edb5c3b42a1403afd02ee0940eb2c45";
+const contractAddress = "0xb3db9c9ddeb7cab2dd2cd47b29cc53594afdd914";
 var fromAddress = "0x7F0D09B5514D2e79271EfD258e1A732Ca5EE89Bf";
 
 const AssetTrackerContract = new web3.eth.Contract(
