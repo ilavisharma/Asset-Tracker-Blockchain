@@ -10,7 +10,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/app.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"
       charset="utf-8"
@@ -19,7 +18,14 @@
   <body>
     <nav class="navbar navbar-light bg-light">
       <span class="navbar-brand mb-0 h1">Asset Tracker</span>
-      <button type="button" class="btn btn-light">Create Asset</button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        Create Asset
+      </button>
       <form class="form-inline my-2 my-lg-0">
         <input
           class="form-control mr-sm-2"
@@ -38,7 +44,12 @@
         style="
     color: #218f76;"
       >
-        <div id="count"></div>
+        <div id="loading-div">
+          <div class="inner-div"><div id="count"></div></div>
+          <div class="inner-div">
+            <img src="./images/loading.gif" alt="loading" id="loading" />
+          </div>
+        </div>
       </h2>
       <table class="table table-hover">
         <thead>
@@ -51,9 +62,122 @@
             <th scope="col">Status</th>
           </tr>
         </thead>
+        <tbody></tbody>
       </table>
+
+      <!-- code for modal -->
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Create a new asset
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="batchNo"
+                    class="form-control"
+                    placeholder="Batch Number"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="desc"
+                    class="form-control"
+                    placeholder="Description"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="manufacturer"
+                    class="form-control"
+                    placeholder="Manufacturer"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="owner"
+                    class="form-control"
+                    placeholder="Owner"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="status"
+                    class="form-control"
+                    placeholder="Current Status"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="createNewAsset()"
+              >
+                Create
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script src="./js/app.js" type="text/javascript"></script>
   </body>
