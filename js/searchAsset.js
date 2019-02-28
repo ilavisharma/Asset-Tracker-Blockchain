@@ -10,15 +10,15 @@ function searchAsset() {
         let result =
           "<h3>Asset found</h3>" +
           "Name: " +
-          response[1] +
+          response[1] + "<br>"
           "Batch No: " +
-          response[0] +
+          response[0] + "<br>"
           "Manufacturer" +
-          response[2] +
+          response[2] + "<br>"
           "Current Status: " +
-          response[4] +
+          response[4] + "<br>"
           "Owner: " +
-          response[3] +
+          response[3] + "<br>"
           "Description: " +
           response[5];
         $("#searchResult").html("");
