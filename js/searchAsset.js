@@ -8,19 +8,26 @@ function searchAsset() {
     else {
       if (response[1] !== "") {
         let result =
-          "<h3>Asset found</h3>" +
-          "Name: " +
-          response[1] + "<br>"
-          "Batch No: " +
-          response[0] + "<br>"
-          "Manufacturer" +
-          response[2] + "<br>"
-          "Current Status: " +
-          response[4] + "<br>"
-          "Owner: " +
-          response[3] + "<br>"
-          "Description: " +
-          response[5];
+          '<br><h2 style="color: #218f76;">Asset found</h2>' +
+          "<strong>Name: </strong>" +
+          response[1] +
+          "<br>" +
+          "<strong>Batch No: </strong>" +
+          response[0] +
+          "<br>" +
+          "<strong>Manufacturer: </strong>" +
+          response[2] +
+          "<br>" +
+          "<strong>Owner: </strong>" +
+          response[3] +
+          "<br>" +
+          "<strong>Description: </strong>" +
+          response[5] +
+          "<br>" +
+          "<strong>Current Status: </strong>" +
+          response[4] +
+          "<br>";
+
         $("#searchResult").html("");
         $("#loading").hide();
         $("#searchResult").append(result);
