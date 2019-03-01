@@ -37,11 +37,11 @@ function renderPageContent() {
             response[4] +
             "</td></tr>";
 
-          $("#loading").hide();
           $("tbody").append(row);
         }
       });
     }
+    $("#loading").hide();
   }
 }
 
@@ -74,16 +74,6 @@ function createNewAsset() {
       }
     });
   $("#exampleModal").modal("hide");
-}
-
-function generateAsset() {
-  return {
-    batchNo: faker.random.number().toString(),
-    name: faker.commerce.product(),
-    desc: faker.lorem.sentence(),
-    manufacturer: faker.company.companyName(),
-    owner: faker.company.companyName()
-  };
 }
 
 $("#exampleModal").on("shown.bs.modal", e => {
