@@ -181,7 +181,7 @@ if (typeof web3 !== "undefined") {
 
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
-const contractAddress = "0xaeae249c086331bc57efb1e10985fc3909acd623";
+const contractAddress = "0xe35622a154075704e9de579f09f1f10b004e14dc";
 var fromAddress = "0x7F0D09B5514D2e79271EfD258e1A732Ca5EE89Bf";
 
 const AssetTrackerContract = new web3.eth.Contract(
