@@ -84,3 +84,15 @@ $("#exampleModal").on("shown.bs.modal", e => {
   $('input[name="manufacturer"]').val(faker.company.companyName());
   $('input[name="owner"]').val(faker.company.companyName());
 });
+
+// Listen for events
+// reload the ledger after any event
+
+AssetTrackerContract.events.AssetTransfer((error, result) => {
+  if (error) console.log(error);
+  else {
+    $("#count").html("");
+    $("tbody").html("");
+    renderPageContent();
+  }
+});
