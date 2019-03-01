@@ -18,10 +18,66 @@
     ></script>
   </head>
   <body>
+    <!-- navbar -->
     <nav class="navbar navbar-light bg-light">
       <span class="navbar-brand mb-0 h1">Asset Tracker</span>
     </nav>
 
+    <div class="container">
+      <h2 class="display-4" style="color: #218f76;">Transfer Asset</h2>
+      <br />
+      <!-- transfer form -->
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <input
+                type="number"
+                name="id"
+                class="form-control"
+                placeholder="Id of the asset"
+              />
+              <br />
+              <div id="searchResult"></div>
+            </div>
+            <div class="col">
+              <button onclick="searchAsset()" class="btn btn-primary">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div id="transferFrom" style="display: none">
+            <div class="form-group">
+              Enter the new details below
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="newOwner"
+                class="form-control"
+                placeholder="New Owner"
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="text"
+                name="newStatus"
+                class="form-control"
+                placeholder="New status of the asset"
+              />
+            </div>
+            <div class="form-group">
+              <button onclick="transferAsset()" class="btn btn-success">
+                Transfer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
