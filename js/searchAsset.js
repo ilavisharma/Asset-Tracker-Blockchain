@@ -7,6 +7,7 @@ function searchAsset() {
     if (error) console.log(error);
     else {
       if (response[1] !== "") {
+        // asset is found
         let result =
           '<br><h2 style="color: #218f76;">Asset found</h2>' +
           "<strong>Name: </strong>" +
@@ -31,7 +32,11 @@ function searchAsset() {
         $("#searchResult").html("");
         $("#loading").hide();
         $("#searchResult").append(result);
+
+        // show the status history
+        $("#statusHistory").show();
       } else {
+        // asset is not found
         let result = "<h3>Asset Not Fuund</h3>";
         $("#searchResult").html("");
         $("#loading").hide();
