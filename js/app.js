@@ -1,5 +1,6 @@
 var assetCount = 0;
 $(document).ready(() => {
+  // execut this function on page load
   renderPageContent();
 });
 function renderPageContent() {
@@ -63,6 +64,8 @@ function createNewAsset() {
         console.log(result);
         $("#loading").show();
         $("tbody").html("");
+
+        // render the table again
         renderPageContent();
         // clear the form
         $('input[name="batchNo"]').val("");
