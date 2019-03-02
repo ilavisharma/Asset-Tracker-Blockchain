@@ -3,45 +3,6 @@ const AssetTrackerABI = [
     constant: false,
     inputs: [
       {
-        name: "_batchNo",
-        type: "string"
-      },
-      {
-        name: "_name",
-        type: "string"
-      },
-      {
-        name: "_description",
-        type: "string"
-      },
-      {
-        name: "_manufacturer",
-        type: "string"
-      },
-      {
-        name: "_owner",
-        type: "string"
-      },
-      {
-        name: "_status",
-        type: "string"
-      }
-    ],
-    name: "createAsset",
-    outputs: [
-      {
-        name: "",
-        type: "uint256"
-      }
-    ],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
-    constant: false,
-    inputs: [
-      {
         name: "_id",
         type: "uint256"
       },
@@ -66,48 +27,9 @@ const AssetTrackerABI = [
     type: "function"
   },
   {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        name: "id",
-        type: "uint256"
-      },
-      {
-        indexed: false,
-        name: "manufacturer",
-        type: "string"
-      },
-      {
-        indexed: false,
-        name: "status",
-        type: "string"
-      }
-    ],
-    name: "AssetCreate",
-    type: "event"
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        name: "id",
-        type: "uint256"
-      },
-      {
-        indexed: false,
-        name: "newOwner",
-        type: "string"
-      }
-    ],
-    name: "AssetTransfer",
-    type: "event"
-  },
-  {
     constant: true,
     inputs: [],
-    name: "assetCount",
+    name: "getAssetCount",
     outputs: [
       {
         name: "",
@@ -160,7 +82,7 @@ const AssetTrackerABI = [
   {
     constant: true,
     inputs: [],
-    name: "getAssetCount",
+    name: "assetCount",
     outputs: [
       {
         name: "",
@@ -170,6 +92,84 @@ const AssetTrackerABI = [
     payable: false,
     stateMutability: "view",
     type: "function"
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "_batchNo",
+        type: "string"
+      },
+      {
+        name: "_name",
+        type: "string"
+      },
+      {
+        name: "_description",
+        type: "string"
+      },
+      {
+        name: "_manufacturer",
+        type: "string"
+      },
+      {
+        name: "_owner",
+        type: "string"
+      },
+      {
+        name: "_status",
+        type: "string"
+      }
+    ],
+    name: "createAsset",
+    outputs: [
+      {
+        name: "",
+        type: "uint256"
+      }
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        name: "id",
+        type: "uint256"
+      },
+      {
+        indexed: false,
+        name: "manufacturer",
+        type: "string"
+      },
+      {
+        indexed: false,
+        name: "status",
+        type: "string"
+      }
+    ],
+    name: "AssetCreate",
+    type: "event"
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        name: "id",
+        type: "uint256"
+      },
+      {
+        indexed: false,
+        name: "newOwner",
+        type: "string"
+      }
+    ],
+    name: "AssetTransfer",
+    type: "event"
   }
 ];
 
