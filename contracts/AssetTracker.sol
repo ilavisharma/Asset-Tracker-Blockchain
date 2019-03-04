@@ -30,7 +30,7 @@ contract AssetTracker {
     function transferAsset(uint _id, string memory _newOwner, string memory _status) public returns(string memory) {
         AssetStore[_id].statusCount++;
         AssetStore[_id].status[AssetStore[_id].statusCount]=AssetLibrary.Status(block.timestamp, _status, _newOwner);
-        emit AssetTransfer(_id, _newOwner);
+        emit AssetTransfer(_id, _newOwner, _status);
     }
     
     function getAssetCount() view public returns(uint) {
@@ -43,5 +43,5 @@ contract AssetTracker {
     }
     
     event AssetCreate(uint id, string manufacturer, string status);
-    event AssetTransfer(uint id, string newOwner);
+    event AssetTransfer(uint id, string newOwner, string status);
 }
