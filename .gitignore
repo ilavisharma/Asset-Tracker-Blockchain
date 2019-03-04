@@ -1,1 +1,3 @@
-build/
+build/contracts/AssetLibrary.json
+build/contracts/AssetTracker.json
+build/contracts/Migrations.json
