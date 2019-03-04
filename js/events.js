@@ -1,16 +1,35 @@
 AssetTrackerContract.events.AssetCreate((error, result) => {
   if (error) console.log(error);
   else {
-    let { returnValues } = result;
-    console.log(returnValues);
-    const newEventData =
-      "<h4>New asset created with id " +
-      returnValues[0] +
-      " by " +
-      returnValues[1] +
-      " current status " +
-      returnValues[2] +
-      "</h4>";
-    $("#dataLog").append(newEventData);
+    let data = result.returnValues;
+
+    // append data to the table
+    let row =
+      '<tr class="table-succes"><td class="table-active">' +
+      data[0] +
+      '</td><td class="table-active">' +
+      data[1] +
+      '</td><td class="table-active">' +
+      data[2] +
+      "</td></tr>";
+    $("tbody").append(row);
+  }
+});
+
+AssetTrackerContract.events.AssetTransfer((error, result) => {
+  if (error) console.log(error);
+  else {
+    let data = result.returnValues;
+
+    // append data to the table
+    let row =
+      '<tr class="table-info"><td>' +
+      data[0] +
+      "</td><td>" +
+      data[1] +
+      "</td><td>" +
+      data[2] +
+      "</td></tr>";
+    $("tbody").append(row);
   }
 });

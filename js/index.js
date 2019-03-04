@@ -13,9 +13,6 @@ function assignVariable(data) {
   contractAddress = data.networks[5777].address;
 }
 
-console.log(contractABI);
-console.log(contractAddress);
-
 if (typeof web3 !== "undefined") {
   web3 = new Web3(web3.currentProvider);
 } else {
