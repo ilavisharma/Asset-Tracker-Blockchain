@@ -1,3 +1,5 @@
-build/contracts/AssetLibrary.json
-build/contracts/AssetTracker.json
-build/contracts/Migrations.json
+# dependencies
+/node_modules
+
+# build contracts
+/build
